@@ -7,6 +7,8 @@ rename folder to lastfm
 chmod 777 folder of the script.
 edit your username and apikey from lastfm
 
+run:
+sudo python3 lastfm.py
 
 ![](display.jpg)
 
