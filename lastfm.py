@@ -29,9 +29,8 @@ font_small.LoadFont("/home/pi/lastfm/tom-thumb.bdf")
 
 
 white = graphics.Color(255, 255, 255)   
-f_red = graphics.Color(0, 0, 0)
+black = graphics.Color(0, 0, 0)
 error = graphics.Color(0, 125, 0)
-
 
 def get_current_track():
 
@@ -47,7 +46,6 @@ def get_current_track():
         song_name = html.escape(song['name'])
         artist_name = html.escape(song['artist']['#text'])
         album_name = html.escape(song['album']['#text'])
-#        start = html.escape(song['@attr']['nowplaying'])
         image_url = song['image'][-1]['#text']
 
         current_track_info = {
@@ -69,22 +67,15 @@ def get_current_track():
 
     return current_track_info
 
-
-
-
 def clock():
-    image = Image.new("RGB", (20, 5))  # Can be larger than matrix if wanted!!
+    image = Image.new("RGB", (20, 5))
     draw = ImageDraw.Draw(image)
     draw.rectangle((0,0,31,31),fill=(0,0,0))
-    matrix.SetImage(image, 44, 1)
+    matrix.SetImage(image, 44, 2)
 
     now = datetime.datetime.now()
     time_string = now.strftime('%H:%M')
-    graphics.DrawText(matrix, font_small, 45, 6, white, time_string)  
-
-
-
-
+    graphics.DrawText(matrix, font_small, 44, 7, white, time_string)
 
 def main():
     current_track_id = None
