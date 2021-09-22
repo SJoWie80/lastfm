@@ -1,3 +1,4 @@
+# Main code for lastfm matrix display
 import requests, os, json, html
 import sys
 from PIL import Image, ImageDraw
