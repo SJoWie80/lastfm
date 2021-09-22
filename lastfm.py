@@ -7,7 +7,7 @@ import datetime
 from PIL import ImageFont
 
 
-#last FM ai settings
+#last FM api settings
 username = '' 
 apikey = '' 
 
@@ -107,7 +107,7 @@ def main():
                 matrix.SetImage(image.convert('RGB'))
 
 
-                graphics.DrawText(matrix, font_small, 8, 45, error, "Geen Artwork")  
+                graphics.DrawText(matrix, font_small, 8, 45, error, "No Artwork")  
 
             else:
                 image = Image.open('/home/pi/lastfm/album_cover.jpg')
